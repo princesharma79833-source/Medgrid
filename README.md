@@ -1,52 +1,46 @@
-# Medgrid Wellness Compass
+# 🏥 MedGrid: Medical Value Compass
 
-Build a modern, responsive Medical Value Travel (MVT) web application named MedGrid using React, Tailwind CSS, and Lucide React icons.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-Global Theme & Navbar:
+**MedGrid** is a modern, responsive Medical Value Travel (MVT) web application designed for international patients. It provides a seamless experience for comparing fixed-price surgical & Ayurveda packages, with transparent pricing and an instant emergency SOS safety net.
 
-Header bar with logo 'MedGrid' (health icon), navigation links ('Home', 'Treatments', 'Compare Packages', 'Travel Help'), a language selector dropdown ('English', 'Arabic', 'Russian'), and a highlighted red 'Emergency SOS' button linking to /sos.
+## ✨ Core Features
 
-Aesthetic: Clean slate background (bg-slate-50), white card containers, primary ocean blue (#0284c7) for Allopathy, and rich emerald green (#059669) for AYUSH/Ayurveda components.
+- 🔵 **Allopathy Care:** Discover specialty treatments (e.g., Total Knee Replacement, Cardiac CABG) with USD price ranges, stay durations, and NABH/JCI verified badges.
+- 🟢 **AYUSH & Wellness:** Explore traditional Indian medicine packages (e.g., 14-Day Panchakarma Detox) with NABH-AYUSH grades, daily diet inclusions, and "Evidence-based care" labels.
+- ⚖️ **Package Comparison (`/compare`):** Side-by-side comparison of medical packages including itemized costs (Room, Procedure, Inclusions/Exclusions).
+- 📝 **Free Quote & Consent (`/quote`):** Secure patient inquiry form with medical record uploads and mandatory privacy consent.
+- 🚨 **Emergency SOS Net (`/sos`):** An emergency flow featuring a 5-second cancel bar, digital ER card generation, and simulated live ambulance tracking.
 
-Homepage Hero & Search Section:
+## 🎨 Global Theme & Aesthetic
 
-Headline: "Verified Healthcare & AYUSH Wellness in India"
+- **Background:** Clean slate (`bg-slate-50`) with white card containers.
+- **Allopathy Primary:** Ocean Blue (`#0284c7`)
+- **AYUSH Primary:** Rich Emerald Green (`#059669`)
+- **Typography & Icons:** Modern sans-serif with Lucide React icons.
 
-Subtitle: "Compare fixed-price surgical & Ayurveda packages with transparent pricing and instant emergency support."
+## 🗺️ Application Routing
 
-Main Search Bar: Input box to search by treatment, specialty, or hospital, with a 'Search' button.
+| Route         | Description                                                |
+| :------------ | :--------------------------------------------------------- |
+| `/`           | Homepage with hero section, search, and featured packages. |
+| `/treatments` | Catalog grid for Allopathy and AYUSH treatments.           |
+| `/compare`    | Side-by-side package comparison table.                     |
+| `/quote`      | Patient inquiry and medical record upload form.            |
+| `/sos`        | Emergency SOS dashboard and live tracking.                 |
 
-System Filter Tabs: Toggle buttons between 'Allopathy Care' and 'AYUSH & Wellness'.
+## 🚀 Local Development
 
-Featured Package Cards Grid:
+This project was built with [Lovable](https://lovable.dev). Every change made in Lovable is committed straight to this repository.
 
-Show two preview sections based on the selected tab:
+To run this project locally, you need Node.js and npm installed on your system.
 
-Allopathy: Display cards like "Total Knee Replacement" and "Cardiac CABG Surgery" with USD price range, stay duration, room type (Private/ICU), and NABH/JCI verified badges.
-
-AYUSH: Display cards like "14-Day Panchakarma Detox" and "Spine & Joint Care" with duration, NABH-AYUSH grade, daily diet inclusions, and an 'Evidence-based care' label.
-
-Routing Structure:
-
-Setup base routes for /, /treatments, /compare, /quote, and /sos.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/fa1a62ca-8774-4b55-8a5f-9d64add36f6d).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+**1. Clone the repository:**
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+git clone [https://github.com/YOUR_GITHUB_USERNAME/medgrid-mvt.git](https://github.com/YOUR_GITHUB_USERNAME/medgrid-mvt.git)
+cd medgrid-mvt
 ```
