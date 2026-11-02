@@ -14,6 +14,7 @@ import { Route as CompareRouteImport } from './routes/compare'
 import { Route as QuoteRouteImport } from './routes/quote'
 import { Route as SosRouteImport } from './routes/sos'
 import { Route as TreatmentsIndexRouteImport } from './routes/treatments.index'
+import { Route as TreatmentsIdRouteImport } from './routes/treatments.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,12 +41,18 @@ const TreatmentsIndexRoute = TreatmentsIndexRouteImport.update({
   path: '/treatments/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TreatmentsIdRoute = TreatmentsIdRouteImport.update({
+  id: '/treatments/$id',
+  path: '/treatments/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/compare': typeof CompareRoute
   '/quote': typeof QuoteRoute
   '/sos': typeof SosRoute
+  '/treatments/$id': typeof TreatmentsIdRoute
   '/treatments/': typeof TreatmentsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/compare': typeof CompareRoute
   '/quote': typeof QuoteRoute
   '/sos': typeof SosRoute
+  '/treatments/$id': typeof TreatmentsIdRoute
   '/treatments': typeof TreatmentsIndexRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,23 @@ export interface FileRoutesById {
   '/compare': typeof CompareRoute
   '/quote': typeof QuoteRoute
   '/sos': typeof SosRoute
+  '/treatments/$id': typeof TreatmentsIdRoute
   '/treatments/': typeof TreatmentsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/compare' | '/quote' | '/sos' | '/treatments/'
+  fullPaths:
+    '/' | '/compare' | '/quote' | '/sos' | '/treatments/$id' | '/treatments/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/compare' | '/quote' | '/sos' | '/treatments'
-  id: '__root__' | '/' | '/compare' | '/quote' | '/sos' | '/treatments/'
+  to: '/' | '/compare' | '/quote' | '/sos' | '/treatments/$id' | '/treatments'
+  id:
+    | '__root__'
+    | '/'
+    | '/compare'
+    | '/quote'
+    | '/sos'
+    | '/treatments/$id'
+    | '/treatments/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,6 +93,7 @@ export interface RootRouteChildren {
   CompareRoute: typeof CompareRoute
   QuoteRoute: typeof QuoteRoute
   SosRoute: typeof SosRoute
+  TreatmentsIdRoute: typeof TreatmentsIdRoute
   TreatmentsIndexRoute: typeof TreatmentsIndexRoute
 }
 
@@ -116,6 +134,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TreatmentsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/treatments/$id': {
+      id: '/treatments/$id'
+      path: '/treatments/$id'
+      fullPath: '/treatments/$id'
+      preLoaderRoute: typeof TreatmentsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -124,6 +149,7 @@ const rootRouteChildren: RootRouteChildren = {
   CompareRoute: CompareRoute,
   QuoteRoute: QuoteRoute,
   SosRoute: SosRoute,
+  TreatmentsIdRoute: TreatmentsIdRoute,
   TreatmentsIndexRoute: TreatmentsIndexRoute,
 }
 export const routeTree = rootRouteImport
