@@ -3,7 +3,7 @@ import { comparePackages } from "@/lib/catalog";
 
 export const Route = createFileRoute("/quote")({
   head: () => ({ meta: [{ title: "Travel Help & Quote — MedGrid" }, { name: "description", content: "Get a personalised quote plus visa, travel and stay assistance." }, { property: "og:title", content: "Travel Help & Quote — MedGrid" }, { property: "og:description", content: "Get a personalised quote plus visa, travel and stay assistance." }] }),
-  validateSearch: (s: Record<string, unknown>): { package?: string } => ({ package: typeof s.package === "string" ? s.package : undefined }),
+  validateSearch: (s: Record<string, unknown>): { package?: string | undefined } => ({ package: typeof s["package"] === "string" ? s["package"] : undefined }),
   component: Page,
 });
 

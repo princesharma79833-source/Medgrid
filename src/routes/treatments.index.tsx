@@ -19,7 +19,7 @@ export const icons: Record<string, LucideIcon> = {
 };
 
 function Card({ t }: { t: Treatment }) {
-  const Icon = icons[t.id];
+  const Icon = icons[t.id] ?? Leaf;
   const allo = t.system === "allo";
   return (
     <Link to="/treatments/$id" params={{ id: t.id }}
